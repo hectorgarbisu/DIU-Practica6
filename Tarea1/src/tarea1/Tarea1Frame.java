@@ -46,7 +46,11 @@ public class Tarea1Frame extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Demo Viewport y Dragging");
-        setMaximumSize(new java.awt.Dimension(800, 600));
+        addComponentListener(new java.awt.event.ComponentAdapter() {
+            public void componentResized(java.awt.event.ComponentEvent evt) {
+                formComponentResized(evt);
+            }
+        });
 
         jLabel1.setText("Héctor Garbisu DIU 2015");
 
@@ -102,6 +106,18 @@ public class Tarea1Frame extends javax.swing.JFrame {
 
         imageLabel.setIcon(new javax.swing.ImageIcon("Painting.jpg"));
         imageLabel.setText("jLabel4");
+        imageLabel.addHierarchyBoundsListener(new java.awt.event.HierarchyBoundsListener() {
+            public void ancestorMoved(java.awt.event.HierarchyEvent evt) {
+            }
+            public void ancestorResized(java.awt.event.HierarchyEvent evt) {
+                imageLabelAncestorResized(evt);
+            }
+        });
+        imageLabel.addComponentListener(new java.awt.event.ComponentAdapter() {
+            public void componentResized(java.awt.event.ComponentEvent evt) {
+                imageLabelComponentResized(evt);
+            }
+        });
         jScrollPane1.setViewportView(imageLabel);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -139,6 +155,18 @@ public class Tarea1Frame extends javax.swing.JFrame {
     private void textIAltoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textIAltoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_textIAltoActionPerformed
+
+    private void imageLabelComponentResized(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_imageLabelComponentResized
+
+    }//GEN-LAST:event_imageLabelComponentResized
+
+    private void imageLabelAncestorResized(java.awt.event.HierarchyEvent evt) {//GEN-FIRST:event_imageLabelAncestorResized
+
+    }//GEN-LAST:event_imageLabelAncestorResized
+
+    private void formComponentResized(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_formComponentResized
+        // TODO add your handling code here:
+    }//GEN-LAST:event_formComponentResized
 
     /**
      * @param args the command line arguments
@@ -182,4 +210,5 @@ public class Tarea1Frame extends javax.swing.JFrame {
     private javax.swing.JTextField textIAncho;
     // End of variables declaration//GEN-END:variables
     private int iAncho, iAlto;
+
 }

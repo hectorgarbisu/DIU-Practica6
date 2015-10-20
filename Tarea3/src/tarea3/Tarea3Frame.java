@@ -110,14 +110,14 @@ public class Tarea3Frame extends javax.swing.JFrame {
 
         jLabel3.setText("Alto");
 
-        textIAncho.setText("jTextField1");
+        textIAncho.setText(" ");
         textIAncho.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 textIAnchoActionPerformed(evt);
             }
         });
 
-        textIAlto.setText("jTextField2");
+        textIAlto.setText(" ");
         textIAlto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 textIAltoActionPerformed(evt);
@@ -134,9 +134,9 @@ public class Tarea3Frame extends javax.swing.JFrame {
                     .addComponent(jLabel2)
                     .addComponent(jLabel3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(textIAncho, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(textIAlto, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(textIAlto, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
+                    .addComponent(textIAncho))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -157,8 +157,8 @@ public class Tarea3Frame extends javax.swing.JFrame {
             }
         });
 
-        imageLabel.setIcon(new javax.swing.ImageIcon("Painting.jpg"));
-        imageLabel.setText("jLabel4");
+        imageLabel.setIcon(new javax.swing.ImageIcon("../Painting.jpg"));
+        imageLabel.setText(" ");
         imageLabel.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         imageLabel.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseDragged(java.awt.event.MouseEvent evt) {
@@ -210,9 +210,8 @@ public class Tarea3Frame extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(posYTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 37, Short.MAX_VALUE)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(estadoTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 37, Short.MAX_VALUE)
-                        .addComponent(posXTextField)))
+                    .addComponent(estadoTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 37, Short.MAX_VALUE)
+                    .addComponent(posXTextField))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -243,18 +242,18 @@ public class Tarea3Frame extends javax.swing.JFrame {
 
         posYViewportLabel.setText("Pos Y:");
 
-        anchoViewportTextField.setText("jTextField1");
+        anchoViewportTextField.setText(" ");
 
-        altoViewportTextField.setText("jTextField2");
+        altoViewportTextField.setText(" ");
 
-        posXViewportTextField.setText("jTextField3");
+        posXViewportTextField.setText(" ");
         posXViewportTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 posXViewportTextFieldActionPerformed(evt);
             }
         });
 
-        posYViewportTextField.setText("jTextField4");
+        posYViewportTextField.setText(" ");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -305,7 +304,7 @@ public class Tarea3Frame extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 258, Short.MAX_VALUE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 267, Short.MAX_VALUE))
                 .addGap(27, 27, 27)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)

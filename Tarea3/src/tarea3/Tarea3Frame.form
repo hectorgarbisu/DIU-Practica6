@@ -31,7 +31,7 @@
               <EmptySpace min="-2" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                  <Component id="jScrollPane1" pref="258" max="32767" attributes="0"/>
+                  <Component id="jScrollPane1" pref="267" max="32767" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
@@ -92,9 +92,9 @@
                       <Component id="jLabel3" alignment="0" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="textIAncho" alignment="1" min="-2" max="-2" attributes="0"/>
-                      <Component id="textIAlto" alignment="1" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Component id="textIAlto" pref="35" max="32767" attributes="0"/>
+                      <Component id="textIAncho" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -129,7 +129,7 @@
         </Component>
         <Component class="javax.swing.JTextField" name="textIAncho">
           <Properties>
-            <Property name="text" type="java.lang.String" value="jTextField1"/>
+            <Property name="text" type="java.lang.String" value=" "/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="textIAnchoActionPerformed"/>
@@ -137,7 +137,7 @@
         </Component>
         <Component class="javax.swing.JTextField" name="textIAlto">
           <Properties>
-            <Property name="text" type="java.lang.String" value="jTextField2"/>
+            <Property name="text" type="java.lang.String" value=" "/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="textIAltoActionPerformed"/>
@@ -155,9 +155,9 @@
         <Component class="javax.swing.JLabel" name="imageLabel">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-              <Connection code="new javax.swing.ImageIcon(&quot;Painting.jpg&quot;)" type="code"/>
+              <Connection code="new javax.swing.ImageIcon(&quot;../Painting.jpg&quot;)" type="code"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="jLabel4"/>
+            <Property name="text" type="java.lang.String" value=" "/>
             <Property name="verticalAlignment" type="int" value="1"/>
           </Properties>
           <Events>
@@ -191,10 +191,8 @@
                   <EmptySpace max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                       <Component id="posYTextField" pref="37" max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="estadoTextField" pref="37" max="32767" attributes="0"/>
-                          <Component id="posXTextField" max="32767" attributes="0"/>
-                      </Group>
+                      <Component id="estadoTextField" pref="37" max="32767" attributes="0"/>
+                      <Component id="posXTextField" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -341,17 +339,17 @@
         </Component>
         <Component class="javax.swing.JTextField" name="anchoViewportTextField">
           <Properties>
-            <Property name="text" type="java.lang.String" value="jTextField1"/>
+            <Property name="text" type="java.lang.String" value=" "/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="altoViewportTextField">
           <Properties>
-            <Property name="text" type="java.lang.String" value="jTextField2"/>
+            <Property name="text" type="java.lang.String" value=" "/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="posXViewportTextField">
           <Properties>
-            <Property name="text" type="java.lang.String" value="jTextField3"/>
+            <Property name="text" type="java.lang.String" value=" "/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="posXViewportTextFieldActionPerformed"/>
@@ -359,7 +357,7 @@
         </Component>
         <Component class="javax.swing.JTextField" name="posYViewportTextField">
           <Properties>
-            <Property name="text" type="java.lang.String" value="jTextField4"/>
+            <Property name="text" type="java.lang.String" value=" "/>
           </Properties>
         </Component>
       </SubComponents>

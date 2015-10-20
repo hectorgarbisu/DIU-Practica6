@@ -8,7 +8,6 @@ package tarea5;
 import java.awt.Dimension;
 import java.awt.Point;
 import java.awt.event.AdjustmentEvent;
-import java.awt.event.WindowEvent;
 import java.io.File;
 import javax.swing.JFileChooser;
 import javax.swing.JScrollBar;
@@ -25,24 +24,7 @@ public class Tarea5Frame extends javax.swing.JFrame {
      */
     public Tarea5Frame() {
         initComponents();
-        Dimension idimension;
-        idimension = imageLabel.getSize();
-        iAncho = idimension.width;
-        iAlto = idimension.height;
-        textIAlto.setText(String.valueOf(iAlto));
-        textIAncho.setText(String.valueOf(iAncho));
-        
-        vista=jScrollPane1.getViewport();
-        Dimension vDimension = vista.getExtentSize();
-        vAncho = vDimension.width;
-        vAlto = vDimension.height;
-        altoViewportTextField.setText(String.valueOf(vAlto));
-        anchoViewportTextField.setText(String.valueOf(vAncho));
-        Point p = vista.getViewPosition();
-        vX = p.x;
-        vY = p.y;
-        posXViewportTextField.setText(String.valueOf(vX));
-        posYViewportTextField.setText(String.valueOf(vY));
+        updateDimensiones();
         
         hBar = jScrollPane1.getHorizontalScrollBar();
         vBar = jScrollPane1.getVerticalScrollBar();
@@ -100,6 +82,7 @@ public class Tarea5Frame extends javax.swing.JFrame {
         altoViewportTextField = new javax.swing.JTextField();
         posXViewportTextField = new javax.swing.JTextField();
         posYViewportTextField = new javax.swing.JTextField();
+        posYViewportTextField1 = new javax.swing.JTextField();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -118,14 +101,14 @@ public class Tarea5Frame extends javax.swing.JFrame {
 
         jLabel3.setText("Alto");
 
-        textIAncho.setText("jTextField1");
+        textIAncho.setText(" ");
         textIAncho.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 textIAnchoActionPerformed(evt);
             }
         });
 
-        textIAlto.setText("jTextField2");
+        textIAlto.setText(" ");
         textIAlto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 textIAltoActionPerformed(evt);
@@ -141,10 +124,10 @@ public class Tarea5Frame extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel2)
                     .addComponent(jLabel3))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(28, 28, 28)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(textIAncho, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(textIAlto, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(textIAlto)
+                    .addComponent(textIAncho))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -165,6 +148,7 @@ public class Tarea5Frame extends javax.swing.JFrame {
             }
         });
 
+        imageLabel.setIcon(new javax.swing.ImageIcon("../Avatar.jpg"));
         imageLabel.setText(" ");
         imageLabel.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         imageLabel.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
@@ -249,18 +233,20 @@ public class Tarea5Frame extends javax.swing.JFrame {
 
         posYViewportLabel.setText("Pos Y:");
 
-        anchoViewportTextField.setText("jTextField1");
+        anchoViewportTextField.setText(" ");
 
-        altoViewportTextField.setText("jTextField2");
+        altoViewportTextField.setText(" ");
 
-        posXViewportTextField.setText("jTextField3");
+        posXViewportTextField.setText(" ");
         posXViewportTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 posXViewportTextFieldActionPerformed(evt);
             }
         });
 
-        posYViewportTextField.setText("jTextField4");
+        posYViewportTextField.setText(" ");
+
+        posYViewportTextField1.setText(" ");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -278,7 +264,8 @@ public class Tarea5Frame extends javax.swing.JFrame {
                     .addComponent(posXViewportTextField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
                     .addComponent(altoViewportTextField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE)
                     .addComponent(anchoViewportTextField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE)
-                    .addComponent(posYViewportTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE))
+                    .addComponent(posYViewportTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE)
+                    .addComponent(posYViewportTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
@@ -300,6 +287,8 @@ public class Tarea5Frame extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(posYViewportTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(posYViewportLabel))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(posYViewportTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -352,10 +341,10 @@ public class Tarea5Frame extends javax.swing.JFrame {
                     .addComponent(jLabel1)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 295, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -368,7 +357,7 @@ public class Tarea5Frame extends javax.swing.JFrame {
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 22, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addComponent(jScrollPane1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel1)
@@ -402,6 +391,7 @@ public class Tarea5Frame extends javax.swing.JFrame {
         if(p.x>iAncho-vAncho) p.x = iAncho-vAncho;
         if(p.y<0) p.y = 0;
         if(p.y>iAlto-vAlto) p.y = iAlto-vAlto;
+        
         vista.setViewPosition(p);
     }//GEN-LAST:event_imageLabelMouseDragged
 
@@ -451,12 +441,10 @@ public class Tarea5Frame extends javax.swing.JFrame {
         fileChooser.setCurrentDirectory(null);
         fileChooser.addChoosableFileFilter(new ImageFilter());
         int retorno = fileChooser.showOpenDialog(jMenuItem1);
-        if (retorno == JFileChooser.APPROVE_OPTION){
-            File file = fileChooser.getSelectedFile();
-            imageLabel.setIcon(new javax.swing.ImageIcon(file.getAbsolutePath()));
-            setTitle("Visor Imágenes - "+file.getName());
-        }
-        
+        if (retorno != JFileChooser.APPROVE_OPTION)return;
+        File file = fileChooser.getSelectedFile();
+        imageLabel.setIcon(new javax.swing.ImageIcon(file.getAbsolutePath()));
+        setTitle("Visor Imágenes - "+file.getName());
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
@@ -537,14 +525,36 @@ public class Tarea5Frame extends javax.swing.JFrame {
     private javax.swing.JTextField posYTextField;
     private javax.swing.JLabel posYViewportLabel;
     private javax.swing.JTextField posYViewportTextField;
+    private javax.swing.JTextField posYViewportTextField1;
     private javax.swing.JTextField textIAlto;
     private javax.swing.JTextField textIAncho;
     // End of variables declaration//GEN-END:variables
     private int iAncho, iAlto;
     private int cX, cY, cX0, cY0;  
-    private JViewport vista; 
+    private JViewport vista;     
     private int vAncho, vAlto, vX, vY;
     private JScrollBar hBar, vBar;
     private Point p0;
+
+    private void updateDimensiones() {
+        Dimension idimension;
+        idimension = imageLabel.getSize();
+        iAncho = idimension.width;
+        iAlto = idimension.height;
+        textIAlto.setText(String.valueOf(iAlto));
+        textIAncho.setText(String.valueOf(iAncho));
+        
+        vista=jScrollPane1.getViewport();
+        Dimension vDimension = vista.getExtentSize();
+        vAncho = vDimension.width;
+        vAlto = vDimension.height;
+        altoViewportTextField.setText(String.valueOf(vAlto));
+        anchoViewportTextField.setText(String.valueOf(vAncho));
+        Point p = vista.getViewPosition();
+        vX = p.x;
+        vY = p.y;
+        posXViewportTextField.setText(String.valueOf(vX));
+        posYViewportTextField.setText(String.valueOf(vY));
+    }
 }
 

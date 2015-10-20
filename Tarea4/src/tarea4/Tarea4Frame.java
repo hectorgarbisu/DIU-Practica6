@@ -109,14 +109,14 @@ public class Tarea4Frame extends javax.swing.JFrame {
 
         jLabel3.setText("Alto");
 
-        textIAncho.setText("jTextField1");
+        textIAncho.setText(" ");
         textIAncho.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 textIAnchoActionPerformed(evt);
             }
         });
 
-        textIAlto.setText("jTextField2");
+        textIAlto.setText(" ");
         textIAlto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 textIAltoActionPerformed(evt);
@@ -132,10 +132,10 @@ public class Tarea4Frame extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel2)
                     .addComponent(jLabel3))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(textIAncho, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(textIAlto, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(textIAncho, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
+                    .addComponent(textIAlto))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -156,8 +156,8 @@ public class Tarea4Frame extends javax.swing.JFrame {
             }
         });
 
-        imageLabel.setIcon(new javax.swing.ImageIcon("Painting.jpg"));
-        imageLabel.setText("jLabel4");
+        imageLabel.setIcon(new javax.swing.ImageIcon("../Painting.jpg"));
+        imageLabel.setText(" ");
         imageLabel.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         imageLabel.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseDragged(java.awt.event.MouseEvent evt) {
@@ -241,11 +241,11 @@ public class Tarea4Frame extends javax.swing.JFrame {
 
         posYViewportLabel.setText("Pos Y:");
 
-        anchoViewportTextField.setText("jTextField1");
+        anchoViewportTextField.setText(" ");
 
-        altoViewportTextField.setText("jTextField2");
+        altoViewportTextField.setText(" ");
 
-        posXViewportTextField.setText("jTextField3");
+        posXViewportTextField.setText(" ");
         posXViewportTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 posXViewportTextFieldActionPerformed(evt);
@@ -253,6 +253,11 @@ public class Tarea4Frame extends javax.swing.JFrame {
         });
 
         posYViewportTextField.setText("jTextField4");
+        posYViewportTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                posYViewportTextFieldActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -303,7 +308,7 @@ public class Tarea4Frame extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 258, Short.MAX_VALUE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 267, Short.MAX_VALUE))
                 .addGap(27, 27, 27)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -400,6 +405,10 @@ public class Tarea4Frame extends javax.swing.JFrame {
     private void estadoTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_estadoTextFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_estadoTextFieldActionPerformed
+
+    private void posYViewportTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_posYViewportTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_posYViewportTextFieldActionPerformed
 
     /**
      * @param args the command line arguments

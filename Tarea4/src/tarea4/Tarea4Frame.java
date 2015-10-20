@@ -350,6 +350,15 @@ public class Tarea4Frame extends javax.swing.JFrame {
         cY = posicion.y;
         posXTextField.setText(String.valueOf(cX));
         posYTextField.setText(String.valueOf(cY));
+        
+        Point p = new Point();
+        p.x = p0.x - (int)((cX-cX0)/1.2);
+        p.y = p0.y - (int)((cY-cY0)/1.2);
+        if(p.x<0) p.x = 0;
+        if(p.x>iAncho-vAncho) p.x = iAncho-vAncho;
+        if(p.y<0) p.y = 0;
+        if(p.y>iAlto-vAlto) p.y = iAlto-vAlto;
+        vista.setViewPosition(p);
     }//GEN-LAST:event_imageLabelMouseDragged
 
     private void imageLabelMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imageLabelMouseMoved
@@ -364,6 +373,10 @@ public class Tarea4Frame extends javax.swing.JFrame {
     private void imageLabelMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imageLabelMousePressed
         imageLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         estadoTextField.setText("Presionado");
+        Point posicion = imageLabel.getMousePosition();
+        cX0 = posicion.x;
+        cY0 = posicion.y;
+        p0 = vista.getViewPosition();
     }//GEN-LAST:event_imageLabelMousePressed
 
     private void imageLabelMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imageLabelMouseReleased
@@ -458,9 +471,10 @@ public class Tarea4Frame extends javax.swing.JFrame {
     private javax.swing.JTextField textIAncho;
     // End of variables declaration//GEN-END:variables
     private int iAncho, iAlto;
-    private int cX, cY;  
+    private int cX, cY, cX0, cY0;  
     private JViewport vista; 
     private int vAncho, vAlto, vX, vY;
     private JScrollBar hBar, vBar;
+    private Point p0;
 }
 

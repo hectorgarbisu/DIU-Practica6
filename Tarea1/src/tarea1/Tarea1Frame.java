@@ -12,10 +12,6 @@ import java.awt.Dimension;
  * @author Héctor Garbisu DIU 2015
  */
 public class Tarea1Frame extends javax.swing.JFrame {
-
-    /**
-     * Creates new form Tarea1Frame
-     */
     public Tarea1Frame() {
         initComponents();
         Dimension idimension;
